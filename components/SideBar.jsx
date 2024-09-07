@@ -28,39 +28,33 @@ function SideBar({session}) {
     const [open,setopen] = useState("hidden")
     const Router = useRouter()
   return (
-    <div className='  w-full h-full flex p-4 flex-col gap-1'>
-        <div className='hover:bg-[#46484b] rounded-xl p-3 flex flex-col  items-start 'onClick={()=>{
-                if(open==="hidden"){
-                    setopen("block")
-
-                }else{
-                    setopen("hidden")
-                }
-                
-                ;console.log("sd")}}>
-            <div className='flex  items-center' >
-                <Avatar src={session?.user.image} radius='sm'></Avatar>
-                    <div className='ml-4 max-sm:hidden'>
-                        <h1>{session?.user.names}</h1>
-                        <h1>jdsj</h1>
-                    </div>
-            </div>
-            <div className={`${open} transition-all`}>
-                <div>
-                    <Button onClick={()=>{
-
-                        signOut();
-                        Router.push("/login")
-                    }}>Logout</Button>
-                </div>
+    <div className='w-full h-full  flex p-4 flex-col max-sm:flex-row max-sm:items-center gap-1 max-sm:justify-between'>
+    <div className='order-0 hover:bg-[#46484b] rounded-xl p-3 flex flex-col items-start' onClick={() => {
+        setopen(open === "hidden" ? "block" : "hidden");
+        console.log("sd");
+    }}>
+        <div className='flex items-center '>
+            <Avatar src={session?.user.image} radius='sm' />
+            <div className='ml-4 max-sm:hidden'>
+                <h1>{session?.user.names}</h1>
+                <h1>jdsj</h1>
             </div>
         </div>
-        <Divider className='mt-4'/>
-        <Bar/>
-        <Bar/>
-        <Bar/>
-
+        <div className={`${open} transition-all`}>
+            <div>
+                <Button onClick={() => {
+                    signOut();
+                    Router.push("/login");
+                }}>Logout</Button>
+            </div>
+        </div>
     </div>
+    <Divider className='mt-4 max-sm:hidden' />
+    <Bar />
+    <Bar />
+    <Bar />
+</div>
+
   )
 }
 
