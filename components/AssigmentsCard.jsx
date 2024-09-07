@@ -24,8 +24,8 @@ async function AssigmentsCard() {
     <div
     className='flex overflow-x-scroll w-full gap-2 '
 >
-    {datarray.map((E)=>{
-        return <MCard Name={E.Name}/>
+    {datarray.map((E,index)=>{
+        return <MCard Name={E.Name} key={index}/>
     })}
 
     
