@@ -1,3 +1,4 @@
+import Topbar from "@/components/Topbar"
 import React from "react"
 
 
@@ -8,6 +9,9 @@ function getData(){
 }
 
 export default async function Page() {
-    const f = await getData()
-    return <h1>Hello, Home page!{f}</h1>
+    return (
+      <div>
+        <Topbar/>
+      </div>
+    )
   }
