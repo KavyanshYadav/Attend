@@ -33,7 +33,7 @@ function SideBar({session}) {
         setopen(open === "hidden" ? "block" : "hidden");
         console.log("sd");
     }}>
-        <div className='flex items-center '>
+        <div className='flex items-center'>
             <Avatar src={session?.user.image} radius='sm' />
             <div className='ml-4 max-sm:hidden'>
                 <h1>{session?.user.names}</h1>
@@ -50,6 +50,7 @@ function SideBar({session}) {
         </div>
     </div>
     <Divider className='mt-4 max-sm:hidden' />
+    
     <Bar />
     <Bar />
     <Bar />

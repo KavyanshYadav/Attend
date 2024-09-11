@@ -3,7 +3,7 @@ import React from 'react'
 import logo from "../app/logo.png"
 function Topbar() {
   return (
-    <div className='flex border-1 items-center pb-4'>
+    <div className='flex  items-center pb-4'>
         <div>
 
         <h1 className='text-xl'>Hey , UssrName</h1>
